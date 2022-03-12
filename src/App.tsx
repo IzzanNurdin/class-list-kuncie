@@ -1,25 +1,26 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ClassesCards from './components/ClassesCards';
+import Layout from './components/Layout';
+import { fetchClasses } from './utils/api';
 
 function App() {
+  const [data, setData] = React.useState<any>({});
+  const [loading, setLoading] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    setLoading(true);
+    fetchClasses()
+      .then((resp: any) => { setData(resp.data); setLoading(false); })
+      .catch((err: any) => { console.error(err); setLoading(false); });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <h1>List Kelas</h1>
+      {loading ? <div className="loader" />
+        : <ClassesCards data={data} />}
+    </Layout>
   );
 }
 
