@@ -2,6 +2,8 @@
 import React from 'react';
 import ClassesCards from './components/ClassesCards';
 import Layout from './components/Layout';
+import { ClassListObj } from './interface/IClass';
+import { IResponse } from './interface/IResponse';
 import { fetchClasses } from './utils/api';
 
 function App() {
@@ -11,7 +13,10 @@ function App() {
   React.useEffect(() => {
     setLoading(true);
     fetchClasses()
-      .then((resp: any) => { setData(resp.data); setLoading(false); })
+      .then((resp: IResponse<ClassListObj>) => {
+        setData(resp.data);
+        setLoading(false);
+      })
       .catch((err: any) => { console.error(err); setLoading(false); });
   }, []);
 
