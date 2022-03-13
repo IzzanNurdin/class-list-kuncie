@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-interface IFetchClassDetail {
-  id: string;
-}
-
 const API_URL = 'https://baee0c5d-15e7-45e2-ae1b-392ba74406a9.mock.pstmn.io';
 
 const axiosInstance = axios.create({
@@ -13,7 +9,7 @@ const axiosInstance = axios.create({
 
 const fetchClasses = () => axiosInstance.get('/available-classes');
 
-const fetchClassById = (id: IFetchClassDetail) => axiosInstance.get('/learning-class', {
+const fetchClassById = (id: string) => axiosInstance.get('/learning-class', {
   params: {
     id,
   },
