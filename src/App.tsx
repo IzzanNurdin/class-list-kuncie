@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import ClassesCards from './components/ClassesCards';
@@ -17,7 +18,10 @@ function App() {
         setData(resp.data);
         setLoading(false);
       })
-      .catch((err: any) => { console.error(err); setLoading(false); });
+      .catch((err: any) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
 
   return (

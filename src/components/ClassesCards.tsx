@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import styled from 'styled-components';
 import { ClassDetail as IClassDetail } from '../interface/IClass';
@@ -42,7 +43,13 @@ function ClassesCards({ data }: Props) {
       <Modal
         show={openModal}
         title="Detail Kelas"
-        content={selectedClass && <ClassDetail selectedClass={selectedClass} />}
+        content={selectedClass
+          && (
+          <ClassDetail
+            selectedClass={selectedClass}
+            setClose={() => setOpenModal(false)}
+          />
+          )}
         setClose={() => setOpenModal(false)}
       />
     </CardsContainer>

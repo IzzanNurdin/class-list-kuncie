@@ -3,3 +3,9 @@ export interface IResponse<I> {
   status: number;
   statusText: string;
 }
+
+export interface IPayload {
+  classId: string;
+  attendeeFullName: string;
+  attendeeEmail: string;
+}

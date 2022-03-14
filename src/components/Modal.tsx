@@ -46,6 +46,21 @@ const ModalBody = styled('div')`
 const ModalFooter = styled('div')`
   margin: 0;
   padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
+const Button = styled('button')`
+  background-color:#FF0000;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  padding: 12px;
+  &:hover {
+    background-color: #DC143C;
+  }
 `;
 
 export default function Modal({
@@ -67,7 +82,7 @@ export default function Modal({
           {content}
         </ModalBody>
         <ModalFooter>
-          <button type="button" onClick={() => setClose()}>Tutup</button>
+          <Button type="button" onClick={() => setClose()}>Tutup</Button>
         </ModalFooter>
       </ModalContent>
     </Overlay>
