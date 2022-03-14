@@ -21,7 +21,7 @@ const Wrapper = styled('div')`
 
 export default function Layout({ children }: Props) {
   return (
-    <Wrapper>
+    <Wrapper data-testid="WrapperLayout">
       {children}
     </Wrapper>
   );

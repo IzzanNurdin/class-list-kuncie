@@ -29,7 +29,7 @@ function ClassesCards({ data }: Props) {
   const [selectedClass, setSelectedClass] = React.useState<IClassDetail>();
 
   return (
-    <CardsContainer>
+    <CardsContainer data-testid="CardsContainer">
       {data && data.items && data.items.map((obj: any) => (
         <Card
           key={obj.id}

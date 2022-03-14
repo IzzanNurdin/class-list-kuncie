@@ -25,7 +25,7 @@ const CardContainer = styled('div')`
 
 function Card({ title, description, onClick }: IClassCard) {
   return (
-    <CardContainer onClick={() => onClick()}>
+    <CardContainer data-testid="CardContainer" onClick={() => onClick()}>
       <h4>{title}</h4>
       {description
         && (

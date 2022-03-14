@@ -71,7 +71,7 @@ export default function Modal({
   }
 
   return (
-    <Overlay>
+    <Overlay data-testid="OverlayModal">
       <ModalContent>
         <ModalHeader>
           <ModalTitle>

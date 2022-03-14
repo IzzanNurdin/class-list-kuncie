@@ -75,7 +75,7 @@ export default function RegistrationForm({ classId, setClose }: Props) {
   }
 
   return (
-    <FormWrapper onSubmit={(e) => onSubmit(e)}>
+    <FormWrapper data-testid="FormWrapper" onSubmit={(e) => onSubmit(e)}>
       <Header>Registrasi</Header>
       <Label>Nama Lengkap</Label>
       <Input type="text" name="attendeeFullName" value={fullName} onChange={(e) => setFullName(e.target.value)} />
